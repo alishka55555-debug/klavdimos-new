@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, Mail, Phone, Hexagon, Star } from 'lucide-react';
 
-// Обновленные ссылки на оригинальные изображения в высоком качестве
 const portfolioItems = [
   { id: 1, category: 'Логотип', title: 'Brand 1', imageUrl: 'https://static.tildacdn.com/tild3537-6461-4761-b336-393139376161/Untitled-2-01.png' },
   { id: 2, category: 'Брендинг', title: 'Brand 2', imageUrl: 'https://static.tildacdn.com/tild6535-3933-4236-a536-323464613432/Untitled-2.png' },
@@ -128,7 +127,7 @@ export default function App() {
       </section>
 
       {/* Портфолио */}
-      <section id="портфолио" className="py-24 bg-[#1F2A1F]/30 border-y border-[#3E5A3F]/20">
+      <section id="портфолио" className="py-24 bg-[#1F2A1F]/30 border-t border-[#3E5A3F]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
             <div>
@@ -140,14 +139,11 @@ export default function App() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10">
             {portfolioItems.map((item) => (
               <div key={item.id} className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer bg-[#1F2A1F] border border-[#3E5A3F]/40 hover:border-[#D9C7A3] hover:shadow-[0_0_30px_rgba(217,199,163,0.15)] transition-all duration-500 flex items-center justify-center p-8">
-                
-                {/* Исправленные настройки картинки */}
                 <img 
                   src={item.imageUrl} 
                   alt={item.title}
                   className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
                 />
-                
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F0D] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 p-6 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <span className="text-[#8CA98C] text-sm uppercase tracking-widest font-bold mb-2 block">{item.category}</span>
@@ -158,8 +154,60 @@ export default function App() {
         </div>
       </section>
 
+      {/* ОБО МНЕ - НОВЫЙ БЛОК */}
+      <section id="обо мне" className="py-24 bg-[#0B0F0D] border-t border-[#3E5A3F]/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            
+            {/* Фото */}
+            <div className="w-full lg:w-1/2 relative group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#8CA98C] to-[#D9C7A3] rounded-2xl blur-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
+              {/* Сюда в будущем вставим фото Клавдии */}
+              <img 
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Клавдия Мос - Бренд-дизайнер" 
+                className="relative rounded-2xl object-cover w-full h-[500px] lg:h-[650px] border border-[#3E5A3F]/50 grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 shadow-2xl"
+              />
+              
+              {/* Бейдж опыта */}
+              <div className="absolute -bottom-6 -right-2 lg:-right-8 bg-[#1F2A1F] border border-[#3E5A3F]/60 p-6 rounded-2xl shadow-[0_0_40px_rgba(11,15,13,0.9)] backdrop-blur-sm z-10">
+                <div className="text-4xl lg:text-5xl font-bold text-[#D9C7A3] mb-1">
+                  12<span className="text-[#8CA98C] text-3xl">+</span>
+                </div>
+                <div className="text-xs lg:text-sm text-[#fcffff] uppercase tracking-widest font-medium">Лет опыта</div>
+              </div>
+            </div>
+            
+            {/* Текст */}
+            <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#fcffff] mb-2">Клавдия Мос</h2>
+              <div className="text-[#8CA98C] text-lg tracking-widest uppercase mb-6 font-medium">Бренд-дизайнер</div>
+              <div className="w-20 h-1 bg-[#D9C7A3] mb-10"></div>
+              
+              <div className="space-y-6 text-[#8CA98C] text-lg lg:text-xl font-light leading-relaxed">
+                <p>
+                  Я создаю визуальный путь и позиционирование для компаний с характером. 
+                  Моя миссия — делать визуал, который вызывает доверие, отражает ценности бренда и работает на рост.
+                </p>
+                <div className="border-l-2 border-[#D9C7A3] pl-6 py-2 my-8">
+                  <p className="text-[#fcffff] font-medium">
+                    Беру на себя всю визуальную зону ответственности: вы делегируете — я делаю. Минимум правок, максимум смысла.
+                  </p>
+                </div>
+                <p>
+                  Я не работаю с теми, кто пытается «рисовать моими руками». Моя задача — создать визуал, который говорит за бренд.
+                </p>
+                <p className="text-[#D9C7A3]">
+                  Если вам нужен дизайн как инструмент доверия и уверенности — давайте знакомиться.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Контакты */}
-      <section id="контакты" className="py-24 bg-[#0B0F0D]">
+      <section id="контакты" className="py-24 bg-[#1F2A1F]/30 border-t border-[#3E5A3F]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-[#fcffff] mb-8">Готовы создать сильный бренд?</h2>
           <p className="text-[#8CA98C] text-xl mb-12 max-w-2xl mx-auto">
