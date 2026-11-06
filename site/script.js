@@ -69,4 +69,59 @@
       el.addEventListener("pointerleave", () => { el.style.transform = ""; });
     });
   }
+
+  /* ---------- просмотр работы ---------- */
+  const viewer = $("#viewer");
+  if (viewer) {
+    const vImg = $("#viewerImg");
+    const vTitle = $("#viewerTitle");
+    const vPlace = $("#viewerPlace");
+    const closeBtn = $("#viewerClose");
+    const prevBtn = $("#viewerPrev");
+    const nextBtn = $("#viewerNext");
+    let list = [];
+    let idx = 0;
+
+    const render = () => {
+      vImg.src = list[idx];
+      vImg.alt = vTitle.textContent;
+    };
+
+    const open = (btn) => {
+      list = (btn.dataset.images || "").split(",").filter(Boolean);
+      if (!list.length) return;
+      idx = 0;
+      vTitle.textContent = btn.dataset.title || "";
+      vPlace.textContent = btn.dataset.place || "";
+      render();
+      viewer.classList.add("is-open");
+      viewer.setAttribute("aria-hidden", "false");
+      document.body.classList.add("is-locked");
+    };
+
+    const close = () => {
+      viewer.classList.remove("is-open");
+      viewer.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("is-locked");
+      setTimeout(() => { if (!viewer.classList.contains("is-open")) vImg.src = ""; }, 300);
+    };
+
+    const step = (dir) => {
+      if (!list.length) return;
+      idx = (idx + dir + list.length) % list.length;
+      render();
+    };
+
+    $$(".work-card__plate").forEach((btn) => btn.addEventListener("click", () => open(btn)));
+    closeBtn.addEventListener("click", close);
+    prevBtn.addEventListener("click", () => step(-1));
+    nextBtn.addEventListener("click", () => step(1));
+    viewer.addEventListener("click", (e) => { if (e.target === viewer) close(); });
+    document.addEventListener("keydown", (e) => {
+      if (!viewer.classList.contains("is-open")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
+    });
+  }
 })();

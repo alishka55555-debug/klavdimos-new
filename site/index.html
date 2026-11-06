@@ -175,6 +175,108 @@
       <a href="https://klavdimos.ru/price" target="_blank" rel="noreferrer">Полный прайс <span>↗</span></a>
     </div>
   </section>
+
+  <!-- ══════════════ ПОРТФОЛИО ══════════════ -->
+  <section class="work" id="work">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow"><i></i>03 — Портфолио</p>
+      <div class="sec-head__row">
+        <h2 class="sec-title">
+          <span class="line"><span class="in">Знаки, которые</span></span>
+          <span class="line"><span class="in in--grad">уже работают</span></span>
+        </h2>
+        <p class="sec-note">Логотипы, айдентика,<br />логобуки.<br />Нажмите, чтобы открыть.</p>
+      </div>
+    </div>
+
+    <div class="work__grid">
+
+      <article class="work-card" data-reveal>
+        <button class="work-card__plate" type="button"
+                data-images="img/logos/halvey-1.png,img/logos/halvey-2.png,img/logos/halvey-3.png"
+                data-title="ХалВей" data-place="Сеть магазинов · Москва">
+          <img src="img/logos/halvey-1.png" alt="Логотип ХалВей" loading="lazy" />
+          <span class="work-card__count">3 изображения</span>
+        </button>
+        <div class="work-card__meta"><h3>ХалВей</h3><span>Сеть магазинов</span></div>
+      </article>
+
+      <article class="work-card" data-reveal>
+        <button class="work-card__plate" type="button"
+                data-images="img/logos/work-01.png"
+                data-title="Halal Cosmetics" data-place="Косметика · Махачкала">
+          <img src="img/logos/work-01.png" alt="Логотип Halal Cosmetics" loading="lazy" />
+        </button>
+        <div class="work-card__meta"><h3>Halal Cosmetics</h3><span>Косметика · Махачкала</span></div>
+      </article>
+
+      <article class="work-card" data-reveal>
+        <button class="work-card__plate" type="button"
+                data-images="img/logos/work-06.png"
+                data-title="ALTIS Riders Club" data-place="Конный клуб · Зеленоград">
+          <img src="img/logos/work-06.png" alt="Логотип ALTIS Riders Club" loading="lazy" />
+        </button>
+        <div class="work-card__meta"><h3>ALTIS Riders Club</h3><span>Конный клуб · Зеленоград</span></div>
+      </article>
+
+      <article class="work-card" data-reveal>
+        <button class="work-card__plate" type="button"
+                data-images="img/logos/work-02.png"
+                data-title="Zumrud Rizvanova" data-place="Личный бренд">
+          <img src="img/logos/work-02.png" alt="Логотип Zumrud Rizvanova" loading="lazy" />
+        </button>
+        <div class="work-card__meta"><h3>Zumrud Rizvanova</h3><span>Личный бренд</span></div>
+      </article>
+
+      <article class="work-card" data-reveal>
+        <button class="work-card__plate" type="button"
+                data-images="img/logos/work-04.png"
+                data-title="SARDI&amp;KO" data-place="Группа компаний">
+          <img src="img/logos/work-04.png" alt="Логотип SARDI&amp;KO" loading="lazy" />
+        </button>
+        <div class="work-card__meta"><h3>SARDI&amp;KO</h3><span>Группа компаний</span></div>
+      </article>
+
+      <article class="work-card" data-reveal>
+        <button class="work-card__plate" type="button"
+                data-images="img/logos/work-05.png"
+                data-title="«Халяль»" data-place="Мясной дворик">
+          <img src="img/logos/work-05.png" alt="Логотип Халяль" loading="lazy" />
+        </button>
+        <div class="work-card__meta"><h3>«Халяль»</h3><span>Мясной дворик</span></div>
+      </article>
+
+      <article class="work-card" data-reveal>
+        <button class="work-card__plate" type="button"
+                data-images="img/logos/work-03.png"
+                data-title="«Истина»" data-place="Исламский центр">
+          <img src="img/logos/work-03.png" alt="Логотип Исламский центр Истина" loading="lazy" />
+        </button>
+        <div class="work-card__meta"><h3>«Истина»</h3><span>Исламский центр</span></div>
+      </article>
+
+      <a class="work-cta" href="#contact" data-reveal>
+        <span class="work-cta__eyebrow">Свободный слот — 1 проект в месяц</span>
+        <span class="work-cta__title">Здесь может быть<br />ваш бренд <i>✳</i></span>
+        <span class="work-cta__link">Обсудить проект <b>↗</b></span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- просмотр работы -->
+  <div class="viewer" id="viewer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Просмотр работы">
+    <button class="viewer__close" id="viewerClose" aria-label="Закрыть">✕</button>
+    <button class="viewer__nav viewer__nav--prev" id="viewerPrev" aria-label="Предыдущее">←</button>
+    <button class="viewer__nav viewer__nav--next" id="viewerNext" aria-label="Следующее">→</button>
+    <figure class="viewer__stage">
+      <img id="viewerImg" src="" alt="" />
+      <figcaption class="viewer__cap">
+        <span id="viewerTitle"></span>
+        <span id="viewerPlace"></span>
+      </figcaption>
+    </figure>
+  </div>
 </main>
 
 <script src="script.js"></script>
