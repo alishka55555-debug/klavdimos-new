@@ -1,16 +1,44 @@
-# React + Vite
+# KLAVDIMOS — сайт бренд-дизайнера
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Статический сайт Клавдии Мос: брендинг, айдентика, логотипы и логобуки.
+Без сборки и зависимостей — открывается двойным кликом по `index.html`.
 
-Currently, two official plugins are available:
+## Что внутри
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```
+index.html    разметка: hero, услуги, портфолио, просмотр работ
+styles.css    палитра, типографика, сетка, адаптив, анимации
+script.js     курсор, магнитные кнопки, reveal, просмотр работ
+STATUS.md     рабочие заметки: что готово, что дальше
+img/          логотип, портрет, логотипы работ
+```
 
-## React Compiler
+## Палитра
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| | |
+|---|---|
+| фон | `#0B0F0D` |
+| панели | `#1F2A1F` |
+| линии | `#3E5A3F` |
+| золото | `#D9C7A3` |
+| шалфей | `#8CA98C` |
 
-## Expanding the ESLint configuration
+Шрифты: Oswald (заголовки), Cormorant Garamond italic (акценты),
+Inter (текст), JetBrains Mono (подписи) — подключены с Google Fonts.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Как открыть
+
+Двойной клик по `index.html`. Для локального сервера:
+
+```bash
+npx serve .
+```
+
+## Деплой
+
+- **GitHub Pages**: Settings → Pages → Source: `main`, папка `/root`.
+- **Netlify / Vercel**: перетащить папку репозитория в окно деплоя.
+
+## Контакты
+
+Телефон: +7 915 196 96 00 · Почта: klavdimos@yandex.ru · VK: vk.com/klavmos
