@@ -82,7 +82,7 @@ body {
 .nav { display: flex; gap: clamp(16px, 2.2vw, 38px); }
 .nav a {
   position: relative;
-  display: inline-flex; align-items: center; gap: 9px;
+  display: inline-block;
   padding: 12px 0;
   font-family: var(--caps); font-weight: 400; text-transform: uppercase;
   font-size: 14.5px; letter-spacing: .16em;
@@ -90,10 +90,13 @@ body {
   transition: color .35s, letter-spacing .35s var(--ease), text-shadow .35s, padding .35s var(--ease);
   white-space: nowrap;
 }
-.nav a::before {
-  content: "✳"; font-style: normal; font-size: 9px; line-height: 1;
-  color: var(--line);
-  transition: color .35s, transform .6s var(--ease);
+.nav__label { position: relative; display: inline-block; overflow: hidden; }
+.nav__label > span { display: inline-block; transition: transform .55s var(--ease); }
+.nav__label::after {
+  content: attr(data-text);
+  position: absolute; left: 0; top: 0; transform: translateY(112%);
+  color: var(--gold);
+  transition: transform .55s var(--ease);
 }
 .nav a::after {
   content: ""; position: absolute; left: 50%; bottom: 2px; height: 1px; width: 0;
@@ -107,10 +110,8 @@ body {
   letter-spacing: .2em;
   text-shadow: 0 0 20px rgba(217, 199, 163, .4);
 }
-.nav a:hover::before, .nav a.is-active::before {
-  color: var(--gold);
-  transform: rotate(180deg) scale(1.5);
-}
+.nav a:hover .nav__label > span { transform: translateY(-112%); }
+.nav a:hover .nav__label::after { transform: translateY(0); }
 .nav a:hover::after, .nav a.is-active::after { width: 100%; }
 .bar.is-stuck .nav a { padding: 8px 0; font-size: 13px; }
 
