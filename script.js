@@ -29,6 +29,21 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  /* подсветка активного раздела в меню */
+  const navLinks = $$(".nav a");
+  if (navLinks.length && "IntersectionObserver" in window) {
+    const targets = navLinks
+      .map((a) => ({ id: (a.getAttribute("href") || "").slice(1), a }))
+      .filter((x) => x.id && document.getElementById(x.id));
+    const setActive = (id) => {
+      navLinks.forEach((a) => a.classList.toggle("is-active", (a.getAttribute("href") || "") === "#" + id));
+    };
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) setActive(en.target.id); });
+    }, { rootMargin: "-38% 0px -58% 0px" });
+    targets.forEach((t) => spy.observe(document.getElementById(t.id)));
+  }
+
   if (fine && !reduce) {
     const dot = $("#cursor");
     const ring = $("#ring");
