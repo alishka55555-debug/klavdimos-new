@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Анимированные логотипы — черновик</title>
+<style>
+  body { margin: 0; background: #0B0F0D; color: #FCFFFF; font-family: Inter, system-ui, sans-serif; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 48px 24px 64px; }
+  h1 { font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 500; text-transform: uppercase;
+       font-size: clamp(28px, 4vw, 44px); letter-spacing: -.01em; margin: 0 0 6px; }
+  p { color: #8CA98C; font-size: 14px; margin: 0 0 36px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+  figure { margin: 0; border: 1px solid rgba(62, 90, 63, .5); background: #0E1310; }
+  img { display: block; width: 100%; height: auto; }
+  figcaption { padding: 14px 16px; border-top: 1px solid rgba(62, 90, 63, .45);
+               font-family: "JetBrains Mono", monospace; font-size: 10px; letter-spacing: .12em;
+               text-transform: uppercase; color: #8CA98C; display: flex; justify-content: space-between; }
+  figcaption b { color: #D9C7A3; font-weight: 400; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Анимированные логотипы</h1>
+    <p>Черновик: 2,6 с, зациклено, золото на фоне сайта. Пока не размещено — жду, куда ставить.</p>
+
+    <div class="grid">
+      <figure>
+        <img src="../img/logos/logo-deer.gif" alt="Логотип олень" />
+        <figcaption><span>Олень / A</span><b>560 × 560 · GIF</b></figcaption>
+      </figure>
+      <figure>
+        <img src="../img/logos/logo-shark.gif" alt="Логотип SHARK" />
+        <figcaption><span>SHARK</span><b>760 × 560 · GIF</b></figcaption>
+      </figure>
+    </div>
+  </div>
+</body>
+</html>
