@@ -41,4 +41,5 @@ npx serve .
 
 ## Контакты
 
-Телефон: +7 915 196 96 00 · Почта: klavdimos@yandex.ru · VK: vk.com/klavmos
+Телефон: +7 915 196 96 00 · Почта: klavdimos@yandex.ru · VK: vk.com/klavmos ·
+Instagram: instagram.com/klavdimos · Facebook: facebook.com/KlavdiMos · WhatsApp: wa.me/79151969600
