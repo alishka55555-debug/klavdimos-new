@@ -140,3 +140,18 @@
     });
   }
 })();
+/* =========================================================
+   КНОПКА «НАВЕРХ»
+   ========================================================= */
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (!scrollTopBtn) return;
+
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('is-visible', window.scrollY > 500);
+  }, { passive: true });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});

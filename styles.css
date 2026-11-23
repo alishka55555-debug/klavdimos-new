@@ -558,6 +558,21 @@ body {
 .viewer__nav--next { right: 2.5vw; top: 50%; transform: translateY(-50%); }
 body.is-locked { overflow: hidden; }
 
+/* кнопка «Наверх» (правилась в GitHub-редакторе) */
+.scroll-top-btn {
+  position: fixed; right: 24px; bottom: 24px; z-index: 85;
+  width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(17, 23, 18, .82); color: var(--gold);
+  border: 1px solid rgba(217, 199, 163, .3); cursor: pointer;
+  opacity: 0; visibility: hidden;
+  transition: opacity .3s, visibility .3s, transform .3s, background .3s, border-color .3s;
+  transform: translateY(8px);
+}
+.scroll-top-btn.is-visible { opacity: 1; visibility: visible; transform: none; }
+.scroll-top-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--bg); }
+.scroll-top-btn:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+
 @media (max-width: 1180px) {
   .work__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .work-cta { flex-direction: column; align-items: flex-start; gap: 12px; }
