@@ -454,7 +454,7 @@ body {
   .icon-btn svg { width: 16px; height: 16px; }
   .icon-btn::after { display: none; }
   .pill { padding: 0 14px; }
-  .contact__socials a { flex: 1 1 auto; justify-content: flex-start; }
+  .contact__chip { flex: 1 1 auto; justify-content: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -558,7 +558,7 @@ body {
 .viewer__nav--next { right: 2.5vw; top: 50%; transform: translateY(-50%); }
 body.is-locked { overflow: hidden; }
 
-/* кнопка «Наверх» (правилась в GitHub-редакторе) */
+/* кнопка «Наверх» */
 .scroll-top-btn {
   position: fixed; right: 24px; bottom: 24px; z-index: 85;
   width: 44px; height: 44px; border-radius: 50%;
@@ -668,26 +668,14 @@ body.is-locked { overflow: hidden; }
 .contact__btn { margin-top: 26px; }
 
 .contact__right { display: flex; flex-direction: column; height: 100%; }
-.contact__row {
-  display: grid; grid-template-columns: 74px minmax(0, 1fr) auto;
-  gap: 14px; align-items: baseline; padding: 15px 0;
-  border-top: 1px solid rgba(62, 90, 63, .45);
-}
-.contact__label {
-  font-family: var(--mono); font-size: var(--fs-2xs); letter-spacing: .16em; text-transform: uppercase;
+.contact__caption {
+  margin-top: 18px; margin-bottom: 8px;
+  font-family: var(--mono); font-size: var(--fs-micro); letter-spacing: .16em; text-transform: uppercase;
   color: var(--sage);
 }
-.contact__value {
-  font-family: var(--caps); font-weight: 300; font-size: clamp(18px, 1.9vw, 28px);
-  color: var(--ink); letter-spacing: .01em; transition: color .3s;
-  overflow-wrap: anywhere;
-}
-.contact__row i { font-style: normal; color: var(--gold); transition: transform .3s var(--ease); }
-.contact__row:hover .contact__value { color: var(--gold); }
-.contact__row:hover i { transform: translate(3px, -3px); }
 
-.contact__socials { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
-.contact__socials a {
+.contact__socials { display: flex; gap: 10px; margin-top: 4px; flex-wrap: wrap; }
+.contact__chip {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 7px 18px 7px 7px; border-radius: 999px; border: 1px solid rgba(62, 90, 63, .65);
   font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: .14em; text-transform: uppercase;
@@ -701,11 +689,11 @@ body.is-locked { overflow: hidden; }
   transition: background .3s, color .3s, transform .5s var(--ease);
 }
 .contact__ico svg { width: 16px; height: 16px; display: block; }
-.contact__socials a i { font-style: normal; color: var(--gold); transition: color .3s, transform .35s var(--ease); }
-.contact__socials a:hover { background: var(--gold); border-color: var(--gold); color: var(--bg); transform: translateY(-2px); }
-.contact__socials a:hover .contact__ico { background: var(--bg); color: var(--gold); transform: rotate(-8deg) scale(1.06); }
-.contact__socials a:hover i { color: var(--bg); transform: translate(2px, -2px); }
-.contact__socials a:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+.contact__chip i { font-style: normal; color: var(--gold); transition: color .3s, transform .35s var(--ease); }
+.contact__chip:hover { background: var(--gold); border-color: var(--gold); color: var(--bg); transform: translateY(-2px); }
+.contact__chip:hover .contact__ico { background: var(--bg); color: var(--gold); transform: rotate(-8deg) scale(1.06); }
+.contact__chip:hover i { color: var(--bg); transform: translate(2px, -2px); }
+.contact__chip:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
 .icon-btn:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
 
 .contact__meta {
@@ -723,6 +711,59 @@ body.is-locked { overflow: hidden; }
   .about__frame { max-width: 100%; }
   .about__badge { right: -8px; bottom: 18px; width: 72px; height: 72px; }
   .about__badge b { font-size: 22px; }
-  .contact__row { grid-template-columns: 1fr auto; gap: 4px 12px; }
-  .contact__label { grid-column: 1 / -1; }
 }
+
+   СТИЛЬНАЯ КНОПКА «НАВЕРХ» (ПО ЦЕНТРУ СНИЗУ)
+   ========================================================= */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #1F2A1F;
+  color: #D9C7A3;
+  border: 1px solid rgba(217, 199, 163, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 16px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(11, 15, 13, 0.8);
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.scroll-top-btn:hover {
+  background-color: #D9C7A3;
+  color: #0B0F0D;
+  border-color: #D9C7A3;
+  transform: translate(-50%, -4px);
+  box-shadow: 0 14px 35px rgba(217, 199, 163, 0.2);
+}
+
+.scroll-top-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.scroll-top-btn:hover svg {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .scroll-top-btn {
+    bottom: 20px;
+    width: 46px;
+    height: 46px;
+  }
+}
+
